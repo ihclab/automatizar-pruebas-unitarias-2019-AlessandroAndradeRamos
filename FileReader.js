@@ -6,16 +6,20 @@ class FileReader{
                 throw new Error(err);
             
             let barras = data.split('\r\n');
-            console.log(barras);
+            let otrasBarras = [];
             for (let i = barras.length - 1; i >= 0; i--){
                 barras[i] = barras[i].split(':');
             }
-            console.log(barras);
             for (let e = 0; e <= barras.length - 1; e++){
-                barras[e][2] = parseFloat(barras[e][2]);
+                otrasBarras[e] = barras[e][2].split(' ');
+                for(let o = 0; o <= otrasBarras[e].length - 1; o++){
+                    otrasBarras[e][o] = Number(otrasBarras[e][o]);
+                }
+                if(!isNaN(barras[e][3]))
                 barras[e][3] = Number(barras[e][3]);
             }
             console.log(barras);
+            console.log(otrasBarras);
         })
     }
 }
