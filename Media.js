@@ -5,7 +5,7 @@ class Media {
       suma += arregloNumeros[i];
     }
     suma = suma / arregloNumeros.length;
-    return suma;
+    return suma.toFixed(4);
   }
   raizEnesima (alfa, omega) {
     let result = Math.pow(alfa, 1 / omega);
@@ -17,15 +17,15 @@ class Media {
       total *= arregloMediaGeo[y];
     }
     let result = this.raizEnesima(total, arregloMediaGeo.length)
-    return result;
+    return result.toFixed(4);
   }
   mediaArmonica (arregloMediaArmo) {
-    let toal = 0;
-    for (let i = arregloMediaArmo.length - 1; i >= 0; i--) {
-      toal += 1/arregloMediaArmo[i];
-    }
-    let result = arregloMediaArmo.length/toal;
-    return result;
+    // let toal = 0;
+    // for (let i = arregloMediaArmo.length - 1; i >= 0; i--) {
+    //   toal += 1/arregloMediaArmo[i];
+    // }
+    // let result = arregloMediaArmo.length/toal;
+    return 'ejele método no implementado';
   }
 }
 
