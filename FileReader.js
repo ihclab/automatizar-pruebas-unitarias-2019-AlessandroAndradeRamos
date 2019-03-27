@@ -17,6 +17,9 @@ class FileReader{
             for (let e = 0; e <= barras.length - 1; e++){
                 otrasBarras[e] = barras[e][2].split(' ');
                 for(let o = 0; o <= otrasBarras[e].length - 1; o++){
+                    if(otrasBarras[e][o] == 'null'|| otrasBarras[e][o] == 'Null' || otrasBarras[e][o] == 'NULL')
+                    otrasBarras[e][o] = null;
+                    else
                     otrasBarras[e][o] = Number(otrasBarras[e][o]);
                 }
                 if(!isNaN(barras[e][3]))

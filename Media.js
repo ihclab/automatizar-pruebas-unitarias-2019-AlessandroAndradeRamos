@@ -1,5 +1,7 @@
 class Media {
   mediaAritmetica (arregloNumeros) {
+    if(arregloNumeros === null)
+    return 0.0000;
     let suma = 0;
     for (let i = arregloNumeros.length - 1; i >= 0; i--) {
       suma += arregloNumeros[i];
@@ -12,6 +14,8 @@ class Media {
     return result;
   }
   mediaGeometrica (arregloMediaGeo) {
+    if(arregloMediaGeo === null)
+    return 0.0000;
     let total = 1;
     for (let y = arregloMediaGeo.length - 1; y >= 0; y--) {
       total *= arregloMediaGeo[y];
