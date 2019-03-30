@@ -3,7 +3,7 @@ let Media = require('./Media');
 let media = new Media();
 
 const fs = require ('fs');
-class FileReader{    
+class Main{    
     leer () {
         fs.readFile('./CasosPrueba.txt', 'utf-8', (err, data) => {
             if(err)
@@ -27,9 +27,13 @@ class FileReader{
             }
             for(let u = 0; u <= barras.length - 1; u++){
                 if(this.ejecutarMetodoPrueba(barras[u][1], otrasBarras[u], barras[u][3]) == true)
-                console.log('Caso de prueba bien exitoso');
+                console.log('Caso de prueba super exitoso');
+                // console.log(barras[u][0] + ' Éxito' + barras[u][1] + ' Calculado' + ' = ');
+                //ETABAMOS A PUNTO DE CAMBIAR LOS METODOS DE EJECUCION DE PRUEBA PARA QUE SOLO PROCESARAN Y DEVOLVIERAN RESULTADO, EN LUGAR DE DECIDIR CIERTO O FALSO
                 else if(this.ejecutarMetodoPrueba(barras[u][1], otrasBarras[u], barras[u][3]) == 'oof')
                 console.log('Caso de prueba super fallido, el caso de prueba no existe');
+                else if(this.ejecutarMetodoPrueba(barras[u][1], otrasBarras[u], barras[u][3]) == 'ooof')
+                console.log('Metodo de prueba no implementado');
                 else
                 console.log('Caso de prueba fallido');
             }
@@ -39,24 +43,32 @@ class FileReader{
         if(nombreIdentificador == 'mediaAritmetica'){
             if(media.mediaAritmetica(valores) == valorEsperado)
             return true;
+            else if(media.mediaAritmetica(valores) == 'ejele metodo no implementado')
+            return 'ooof';
             else
             return false;
         }
         else if(nombreIdentificador == 'mediaGeometrica'){
             if(media.mediaGeometrica(valores) == valorEsperado)
             return true;
+            else if(media.mediaGeometrica(valores) == 'ejele metodo no implementado')
+            return 'ooof';
             else
             return false;
         }
         else if(nombreIdentificador == 'raizEnesima'){
-            if(media.mediaArmonica(valores) == valorEsperado)
+            if(media.raizEnesima(valores) == valorEsperado)
             return true;
+            else if(media.raizEnesima(valores) == 'ejele metodo no implementado')
+            return 'ooof';
             else
             return false;
         }
         else if(nombreIdentificador == 'mediaArmonica'){
             if(media.mediaArmonica(valores) == valorEsperado)
             return true;
+            else if(media.mediaArmonica(valores) == 'ejele metodo no implementado')
+            return 'ooof';
             else
             return false;
         }
@@ -65,5 +77,5 @@ class FileReader{
 }
 
 
-let Lector = new FileReader();
+let Lector = new Main();
 Lector.leer();
